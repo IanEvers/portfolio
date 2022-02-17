@@ -104,6 +104,8 @@ export default {
   methods: {
     modeloCargado(model) {
       this.modelo = model
+      console.log('cargado')
+
     },
 
     cargaEnProceso(carga) {
