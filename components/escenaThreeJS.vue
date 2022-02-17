@@ -29,6 +29,8 @@
         <GltfModel
           src="/static/modelo/ianevers.gltf"
           @load="modeloCargado"
+          @progress="cargaEnProceso"
+          @error="onError"
           ref="modelo"
         />
       </Scene>
@@ -48,7 +50,7 @@ export default {
   components: { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel},
   mounted() {
     this.tamañoCanvas()
-    console.log('mounted');
+    console.log('mounted'); 
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -59,52 +61,59 @@ export default {
         pin: true,
         pinSpacing: false
       })
-    })  
+    })
+
+    let target = this.$refs.renderer.three.pointer.positionV3
+
+    this.$refs.renderer.onBeforeRender(() => {
+
+      target.x += ( this.mouseX - target.x ) * 0.02;
+      target.y += ( - this.mouseY - target.y ) * 0.02;
+
+      if(target.x < -7.5) { target.x = -7.5 }
+      if(target.x >  7.5) { target.x =  7.5 }
+      if(target.y < -4.5) { target.y = -4.5 }
+      if(target.y >  1.5) { target.y =  1.5 }
+
+      target.z = this.$refs.camera.camera.position.z;
+      if(this.modelo != '') {
+        this.modelo.lookAt( target );
+      }
+
+    });
   },
   created() {
-    window.addEventListener("resize", this.tamañoCanvas);
+    if (window.innerWidth > 900) {
+      window.addEventListener("resize", this.tamañoCanvas);
+    }
   },
   destroyed() {
-    window.removeEventListener("resize", this.tamañoCanvas);
+    if (window.innerWidth > 900) {
+      window.removeEventListener("resize", this.tamañoCanvas);
+    }
   },
   data () {
     return {
-      // gui: new GUI(),
       mouseX: 0,
-      mouseY: 0
+      mouseY: 0,
+      estadoModelo: '',
+      modelo: ''
+
     }
   },
   methods: {
     modeloCargado(model) {
-      // const modeloIanGUI = this.gui.addFolder('modeloIan')
-      // modeloIanGUI.add(model.rotation, 'x', 0, Math.PI * 2)
-      // modeloIanGUI.add(model.rotation, 'y', 0, Math.PI * 2)
-      // modeloIanGUI.add(model.rotation, 'z', 0, Math.PI * 2)
-      // modeloIanGUI.add(model.scale, 'x', 0, Math.PI * 2)
-      // modeloIanGUI.add(model.scale, 'y', 0, Math.PI * 2)
-      // modeloIanGUI.add(model.scale, 'z', 0, Math.PI * 2)
-      // modeloIanGUI.open()
-      console.log('funciona');
-      let target = this.$refs.renderer.three.pointer.positionV3
+      this.modelo = model
+    },
 
-      // let tiempo = 0
-      this.$refs.renderer.onBeforeRender(() => {
-        // tiempo += 0.1
-        // model.rotation.y = 0.2 * Math.cos(tiempo)
+    cargaEnProceso(carga) {
+      console.log(carga)
+      this.estadoModelo = carga.loaded / carga.total
+      console.log(this.estadoModelo)
+    },
 
-        target.x += ( this.mouseX - target.x ) * 0.02;
-        target.y += ( - this.mouseY - target.y ) * 0.02;
-
-        if(target.x < -7.5) { target.x = -7.5 }
-        if(target.x >  7.5) { target.x =  7.5 }
-        if(target.y < -4.5) { target.y = -4.5 }
-        if(target.y >  1.5) { target.y =  1.5 }
-
-        target.z = this.$refs.camera.camera.position.z;
-
-        model.lookAt( target );
-
-      });
+    onerror(error) {
+      console.log(error)
     },
 
     onDocumentMouseMove( event ) {
