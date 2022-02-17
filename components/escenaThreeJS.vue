@@ -27,7 +27,7 @@
         <AmbientLight  />
         
         <GltfModel
-          src="/static/modelo/ianevers.gltf"
+          src="https://ianevers.github.io/Ian/ianevers.glb"
           @load="modeloCargado"
           @progress="cargaEnProceso"
           @error="onError"
@@ -114,7 +114,7 @@ export default {
       console.log(this.estadoModelo)
     },
 
-    onerror(error) {
+    onError(error) {
       console.log(error)
     },
 
