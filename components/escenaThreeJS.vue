@@ -3,17 +3,16 @@
           
     <section class="h-screen flex justify-center relative bg-zinc-300	">
       <div class="flex-column justify-center">
-        <h1 class="text-7xl text-center   lg:mt-5 pt-5 "> Ian Evers </h1>
-        <h1 class="text-xl text-center   lg:mt-5 pt-5 "> Frontend Developer </h1>
+        <h1 class="text-7xl text-center lg:mt-5 pt-5 "> Ian Evers </h1>
+        <h1 class="text-xl text-center lg:mt-5 pt-5 "> Frontend Developer </h1>
       </div>
-
     </section>
 
-    <section id="seccion2" class="h-screen flex justify-center lg:justify-start items-center  bg-zinc-800">
+    <section id="seccion2" class="h-screen flex justify-center lg:justify-start items-center bg-zinc-800">
       <h1 class="text-7xl text-white z-10 lg:ml-5 pl-5 lg:mt-5 pt-5"> Soy Ian. </h1>
     </section>
       
-    <section class="h-screen flex justify-center lg:justify-start bg-zinc-300	">
+    <section class="h-screen flex justify-center lg:justify-start bg-zinc-300">
       <h1 class="text-7xl z-10 lg:ml-5 pl-5 lg:mt-5 pt-5"> Chau. </h1>
     </section>
 
@@ -44,8 +43,6 @@
 import { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel } from 'troisjs'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-
-
 
 export default {
   components: { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel},
