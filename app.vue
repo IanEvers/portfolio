@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <EscenaThreeJS />
+  </div>
+</template>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,300&display=swap');
+
+</style>
