@@ -1,35 +1,24 @@
 <template>
-
   <div>
-    <header class="flex items-center justify-around">
-      <img src="../static/logoDibujo.png" alt="" class="logo">
-      <nav>
-        <div class="links flex justify-around gap-8">
-          <a class="link" href="#sobreMi"> Sobre Mi </a>
-          <a class="link" href="#proyectos"> Proyectos </a>
-          <a class="link" href="#contacto"> Contacto </a>
-        </div>
-      </nav>
-    </header>
-
-    <main class="m-4">
-      <div class="tituloYSubtitulo">
+   
+    <section class="m-4 pt-20 min-h-screen" id="sobreMi">
+      <div class="tituloYSubtitulo ">
         <h1 class="titulo">Ian Evers</h1>
         <p class="subtitulo">Developer</p>
       </div>
-      <!-- <img src="../static/podesta.jpg" alt="ian evers" class="max-w-full imagenPrincipal"> -->
-      <p class="presentacion"> Soy un buen pibe y me gusta hacer frontends.
-        Trabajé por dos años en el Ejército Argentino como programador web, y ahora estoy buscando otra cosa. <br>
+
+      <p class="presentacion z-20"> Soy un buen pibe y me gusta hacer frontends.
+        Trabajé por dos años en el Ejército Argentino como programador web, y ahora estoy buscando otra cosa.
+        Vivo en Almagro, CABA, Argentina. <br>
         Si les gustaría darme un laburito, pueden.
       </p>
    
-
-      <footer class="flex items-center justify-center">
-        <a href="" class="redSocial" aria-label="linkedin"> <img src="../static/githubLogo.png" alt="" class="redSocialImagen"> </a>
-        <a href="" class="redSocial" aria-label="mail">     <img src="../static/logoMail.png" alt="" class="redSocialImagen">   </a>
+      <footer class="flex items-center justify-center z-20">
+        <a href="" class="redSocial" aria-label="linkedin"> <img src="/githubLogo.png" alt="" class="redSocialImagen"> </a>
+        <a href="" class="redSocial" aria-label="mail">     <img src="/logoMail.png" alt="" class="redSocialImagen">   </a>
         <a href="" class="redSocial" aria-label="github">   <img src="" alt="" class="redSocialImagen">                         </a>
       </footer>
-    </main>
+    </section>
   </div>
 
 </template>
@@ -40,12 +29,7 @@
 
 <style lang="scss" scoped>
 
-header {
-  background-color: #C7BEA2;
-}
-.link {
-  font-size: 1.2rem;
-}
+
 .titulo {
   color: #524d3e;
   font-size: clamp(3rem, 10vw, 7rem);
@@ -53,19 +37,9 @@ header {
   line-height: 1;
 }
 
-.link:hover {
-  color: black;
-  transform: scale(1.02);
-  transition: 100ms;
-}
-
 .subtitulo {
   font-size: 2rem;
   color: #726338;
-}
-
-.logo {
-  max-width: 100px;
 }
 
 .presentacion {
@@ -88,7 +62,7 @@ header {
 }
 
 @media (min-width: 768px) {
-  main {
+  section {
     display: grid;
     grid-template-columns: 
       minmax(1rem, 1fr)
@@ -96,7 +70,6 @@ header {
       minmax(1rem, 1fr);
     gap: 0.5rem;
     grid-auto-flow: dense;
-    margin-top: 1rem;
   }
 
   .tituloYSubtitulo {
@@ -109,12 +82,6 @@ header {
     grid-row: 3;
     justify-content: start;
   }
-
-  // .imagenPrincipal {
-  //   grid-column: 3 / -1;
-  //   grid-row: 1 / 4;
-  //   z-index: -1;
-  // }
 
   .presentacion {
     grid-column: 2 / 3;

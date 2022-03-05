@@ -1,17 +1,18 @@
 <template>
   <div @mousemove="onDocumentMouseMove">
     <Renderer 
+      id="renderer"
       ref="renderer"
-      class="fixed top-0 left-0 opacity-40 -z-20"
+      class="fixed top-0 left-0 opacity-40 z-10"
       :alpha="true"
     >
-      <Camera  ref="camera" :position="{ z: 2, x: -1 }"/>
+      <Camera  ref="camera" :position="{ z: 2, x: -0.8 }"/>
       <Scene>
         <PointLight :position="{ y: 50, z: 50 }" />
         <AmbientLight />
         
         <GltfModel
-          src="https://ianevers.github.io/Ian/ianevers.glb"
+          src="/modelo/ianevers.glb"
           @load="modeloCargado"
           @progress="cargaEnProceso"
           @error="onError"
@@ -26,41 +27,75 @@
 <script>
 
 import { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel } from 'troisjs'
+import { GUI } from 'dat.gui'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+
+    
 
 export default {
   components: { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel},
   mounted() {
     this.tamañoCanvas()
+    
+    gsap.registerPlugin(ScrollTrigger)
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray("section").forEach((seccion, i) => {
-      ScrollTrigger.create({
-        trigger: seccion,
-        start: "top top",
-        pin: true,
-        pinSpacing: false
-      })
+    gsap.to('#renderer' , {
+      scrollTrigger: {
+        trigger: '.seccionProyectos',
+        start: "top bottom",
+        toggleActions: 'restart none reverse reverse'
+      },
+      opacity: 0,
+      duration: 1
     })
+    
 
     let target = this.$refs.renderer.three.pointer.positionV3
+    if (window.innerWidth > 900) {
 
-    this.$refs.renderer.onBeforeRender(() => {
+      this.$refs.renderer.onBeforeRender(() => {
 
-      target.y += ( - this.mouseY - target.y + 100) * 0.0002;
+        // console.log(" - this.mouseY " + (- this.mouseY) )
+        // console.log("- target.y  "+  (- target.y) )
+        // console.log(" - this.mouseY - target.y + 100 "+  (- this.mouseY - target.y + 100 ))
+
+        target.y += ( - this.mouseY + 100) * 0.0002 ;
+        target.y = Math.min(Math.max(target.y, -1.5), 0);
+
+        target.x += this.mouseX * 0.0002 ;
+        target.x = Math.min(Math.max(target.x, -2), -1);
 
 
+        target.z = this.$refs.camera.camera.position.z;
+
+        if(this.modelo != '') {
+          this.modelo.lookAt( target );
+        }
+
+      });
+    } else {
+
+      this.$refs.camera.camera.position.y = 1
+      this.$refs.camera.camera.position.z = 5
+      this.$refs.camera.camera.position.x = 0
+
+      this.$refs.camera.camera.rotation.y = 0.1
+   
+      let tiempoInicial = Date.now();
       
-
-      target.z = this.$refs.camera.camera.position.z;
-      target.x = -3;
-      if(this.modelo != '') {
-        this.modelo.lookAt( target );
-      }
-
-    });
+      this.$refs.renderer.onBeforeRender(() => {
+        if(this.modelo != '') {
+          this.modelo.rotation.y = 0;
+          this.modelo.rotation.z = 2;
+          this.modelo.rotation.x = 5;
+        }
+        const tiempo = Date.now() - tiempoInicial;
+        if(this.modelo != '') {
+          this.modelo.position.y = Math.cos(tiempo / 500) * 0.05 - 1
+        }
+      })
+    }
   },
 
   created() {
@@ -87,6 +122,7 @@ export default {
   methods: {
     modeloCargado(model) {
       this.modelo = model
+      
     },
 
     cargaEnProceso(carga) {

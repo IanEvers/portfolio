@@ -1,0 +1,70 @@
+<template>
+  <section class="min-h-screen pt-5 text-center seccionProyectos z-30" id="proyectos">
+    <h1 class="titulo mb-3 sm:mb-12">proyectos</h1>
+
+    <div class="flex flex-wrap justify-center items-center sm:m-4">
+      
+      <TarjetaProyecto v-for="proyecto in proyectos" :key="proyecto.titulo"
+        :titulo="proyecto.titulo"
+        :descripcion="proyecto.descripcion"
+        :imagen="proyecto.imagen"
+        :url="proyecto.url"
+      />
+
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  data: function () {
+    return {
+      proyectos: 
+      [ 
+        {
+          titulo: "Arriba El Taller",
+          descripcion: "Una pequeña página web que hice para Lea, profesora de un taller de arte para niños.",
+          imagen: "/MapaLea.png",
+          url: "https://www.arribaeltaller.com.ar/"
+        },
+
+        {
+          titulo: "Piano-midi",
+          descripcion: "una mini webapp para poder hacer dibujos con el piano. Actualmente en desarrollo.",
+          imagen: "/piano-midi.jpg",
+          url: "https://piano-midi-ianevers.vercel.app/"
+        },
+
+        {
+          titulo: "Portfolio",
+          descripcion: "Esta página XD. La hice para aprender a hacer una página con Three JS. El modelo de mi cara lo hice con un plugin de Blender, no sé modelar.",
+          imagen: "/portfolio.jpg",
+          url: "https://ian-broker.vercel.app/"
+        },
+
+        {
+          titulo: "Bot de tuiter",
+          descripcion: "Un bot que genera noticias falsas y las sube a tuiter, escrito en python.",
+          imagen: "/podesta.jpg",
+          url: "https://github.com/IanEvers/twitterBot"
+        },
+
+      ]
+    }
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+.seccionProyectos {
+  background-color: #726338;
+}
+
+.titulo {
+  font-size: clamp(3rem, 10vw, 7rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: white;
+}
+
+</style>
