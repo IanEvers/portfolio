@@ -33,18 +33,18 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
 
-    if (window.innerWidth > 900) {
-      gsap.utils.toArray("section").forEach((seccion, i) => {
-        ScrollTrigger.create({
-          trigger: seccion,
-          start: "top top",
-          pin: true,
-          pinSpacing: false,
-          scrub: true,
-          scroll: 'smooth'
-        })
-      })
-    }
+    // if (window.innerWidth > 900) {
+    //   gsap.utils.toArray("section").forEach((seccion, i) => {
+    //     ScrollTrigger.create({
+    //       trigger: seccion,
+    //       start: "top top",
+    //       pin: true,
+    //       pinSpacing: false,
+    //       scrub: true,
+    //       scroll: 'smooth'
+    //     })
+    //   })
+    // }
   }
 }
 </script>

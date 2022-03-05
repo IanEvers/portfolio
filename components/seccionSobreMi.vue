@@ -14,9 +14,15 @@
       </p>
    
       <footer class="flex items-center justify-center z-20">
-        <a href="" class="redSocial" aria-label="linkedin"> <img src="/githubLogo.png" alt="" class="redSocialImagen"> </a>
-        <a href="" class="redSocial" aria-label="mail">     <img src="/logoMail.png" alt="" class="redSocialImagen">   </a>
-        <a href="" class="redSocial" aria-label="github">   <img src="" alt="" class="redSocialImagen">                         </a>
+        <a href="https://github.com/IanEvers?tab=repositories" class="redSocial z-20" aria-label="github"> 
+          <img src="/githubLogo.png" alt="github logo" class="redSocialImagen"> 
+        </a>
+        <a href="https://www.linkedin.com/in/ianevers/" class="redSocial z-20" aria-label="linkedin"> 
+          <img src="/linkedin.png" alt="lnkedin logo" class="redSocialImagen">
+        </a>
+        <a href="mailto:iancitoevers@gmail.com"  class="redSocial z-20" aria-label="mail">
+          <img src="/logoMail.png" alt="mail logo" class="redSocialImagen">
+        </a>
       </footer>
     </section>
   </div>

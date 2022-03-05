@@ -3,7 +3,7 @@
     <Renderer 
       id="renderer"
       ref="renderer"
-      class="fixed top-0 left-0 opacity-40 z-10"
+      class="fixed top-0 left-0 opacity-40 "
       :alpha="true"
     >
       <Camera  ref="camera" :position="{ z: 2, x: -0.8 }"/>
