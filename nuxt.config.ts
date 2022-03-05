@@ -5,5 +5,4 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/styles.scss'],
   buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts'],
   ssr: false,
-
 })
