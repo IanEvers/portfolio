@@ -54,6 +54,7 @@
 .presentacion {
   margin: 0.5rem 0;
   max-width: 700px;
+  font-size: 1.05rem;
 }
 
 .boton {
