@@ -50,7 +50,7 @@ export default {
     
 
     let target = this.$refs.renderer.three.pointer.positionV3
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 768) {
 
       this.$refs.renderer.onBeforeRender(() => {
 
@@ -97,13 +97,13 @@ export default {
   },
 
   created() {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 768) {
       window.addEventListener("resize", this.tamañoCanvas);
     }
   },
 
   destroyed() {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > 768) {
       window.removeEventListener("resize", this.tamañoCanvas);
     }
   },
@@ -137,8 +137,6 @@ export default {
       this.mouseX  = event.clientX - ( window.innerWidth * 0.25)   - ( ( window.innerWidth + rect.left ) / 2); //x position within the element.
       this.mouseY  = event.clientY -  ( ( window.innerHeight + rect.top ) / 2);  //y position within the element.
 
-
-      // console.log('this.mouseY ' + this.mouseY, 'this.mouseX '+ this.mouseX)
     },
 
     tamañoCanvas() {
