@@ -1,25 +1,27 @@
 <template>
   <div>
-    <header class="top-0 left-0 absolute w-screen flex items-center justify-between sm:justify-around z-30">
-      <img src="/logoDibujo.png" alt="" class="logo ml-2">
-      <nav class="hidden sm:block">
-        <div class="links flex justify-around gap-8">
-          <a class="link" href="#sobreMi"> Sobre Mi </a>
-          <a class="link" href="#proyectos"> Proyectos </a>
-          <a class="link" href="#contacto"> Contacto </a>
-        </div>
-      </nav>
+    <div class="flex flex-col min-h-screen">
+      <header class="w-screen flex items-center justify-between sm:justify-around z-30">
+        <img src="/logoDibujo.png" alt="" class="logo ml-2">
+        <nav class="hidden sm:block">
+          <div class="links flex justify-around gap-8">
+            <a class="link" href="#sobreMi"> Sobre Mi </a>
+            <a class="link" href="#proyectos"> Proyectos </a>
+            <a class="link" href="#contacto"> Contacto </a>
+          </div>
+        </nav>
 
-      <button class="sm:hidden p-6">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </header>
-    
-    <SeccionSobreMi />
-    <EscenaThreeJS />
-    <SeccionProyectos />
+        <button class="sm:hidden p-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </header>
+      
+      <SeccionSobreMi> </SeccionSobreMi>
+    </div>
+
+    <SeccionProyectos> </SeccionProyectos>
     
   </div>
 </template>

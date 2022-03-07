@@ -1,33 +1,31 @@
 <template>
-  <div @mousemove="onDocumentMouseMove">
-    <Renderer 
-      id="renderer"
-      ref="renderer"
-      class="fixed top-0 left-0 opacity-40 "
-      :alpha="true"
-    >
-      <Camera  ref="camera" :position="{ z: 2, x: -0.8 }"/>
-      <Scene>
-        <PointLight :position="{ y: 50, z: 50 }" />
-        <AmbientLight />
-        
-        <GltfModel
-          src="/modelo/ianevers.glb"
-          @load="modeloCargado"
-          @progress="cargaEnProceso"
-          @error="onError"
-          ref="modelo"
-        />
-      </Scene>
-    </Renderer>
-  </div>
+  <Renderer
+    id="renderer"
+    ref="renderer"
+    class="absolute top-0 right-0 max-h-full w-full opacity-40"
+    :alpha="true"
+    @mousemove="onDocumentMouseMove"
+  >
+    <Camera  ref="camera" :position="{ z: 2, x: -0.8 }"/>
+    <Scene>
+      <PointLight :position="{ y: 50, z: 50 }" />
+      <AmbientLight />
+      
+      <GltfModel
+        src="/modelo/ianevers.glb"
+        @load="modeloCargado"
+        @progress="cargaEnProceso"
+        @error="onError"
+        ref="modelo"
+      />
+    </Scene>
+  </Renderer>
   
 </template>
 
 <script>
 
 import { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel } from 'troisjs'
-import { GUI } from 'dat.gui'
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
@@ -40,15 +38,15 @@ export default {
     
     gsap.registerPlugin(ScrollTrigger)
 
-    gsap.to('#renderer' , {
-      scrollTrigger: {
-        trigger: '.seccionProyectos',
-        start: "top bottom",
-        toggleActions: 'restart none reverse reverse'
-      },
-      opacity: 0,
-      duration: 1
-    })
+    // gsap.to('#renderer' , {
+    //   scrollTrigger: {
+    //     trigger: '.seccionProyectos',
+    //     start: "top bottom",
+    //     toggleActions: 'restart none reverse reverse'
+    //   },
+    //   opacity: 0,
+    //   duration: 1
+    // })
     
 
     let target = this.$refs.renderer.three.pointer.positionV3
@@ -64,7 +62,7 @@ export default {
         target.y = Math.min(Math.max(target.y, -1.5), 0);
 
         target.x += this.mouseX * 0.0002 ;
-        target.x = Math.min(Math.max(target.x, -2), -1);
+        target.x = Math.min(Math.max(target.x, -2), -0);
 
 
         target.z = this.$refs.camera.camera.position.z;
@@ -78,7 +76,7 @@ export default {
 
       this.$refs.camera.camera.position.y = 1
       this.$refs.camera.camera.position.z = 5
-      this.$refs.camera.camera.position.x = 0
+      this.$refs.camera.camera.position.x = 0.2
 
       this.$refs.camera.camera.rotation.y = 0.1
    
@@ -119,10 +117,10 @@ export default {
     }
   },
 
+
   methods: {
     modeloCargado(model) {
       this.modelo = model
-      
     },
 
     cargaEnProceso(carga) {
@@ -134,8 +132,13 @@ export default {
     },
 
     onDocumentMouseMove( event ) {
-      this.mouseX = ( event.clientX - (window.innerWidth / 2 ));
-      this.mouseY = ( event.clientY - (window.innerHeight / 2));
+
+      var rect = document.getElementById('sobreMi').getBoundingClientRect();
+      this.mouseX  = event.clientX - ( window.innerWidth * 0.25)   - ( ( window.innerWidth + rect.left ) / 2); //x position within the element.
+      this.mouseY  = event.clientY -  ( ( window.innerHeight + rect.top ) / 2);  //y position within the element.
+
+
+      // console.log('this.mouseY ' + this.mouseY, 'this.mouseX '+ this.mouseX)
     },
 
     tamañoCanvas() {
@@ -149,19 +152,6 @@ export default {
 
 <style lang="scss" scoped>
 
-  h1 {
-    text-align: center;
-  }
 
-    /* we will explain what these classes do next! */
-  .v-enter-active,
-  .v-leave-active {
-    transition: opacity 0.5s ease;
-  }
-
-  .v-enter-from,
-  .v-leave-to {
-    opacity: 0;
-  }
 
 </style>

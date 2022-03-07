@@ -2,7 +2,7 @@
   <section class="min-h-screen pt-5 text-center seccionProyectos z-30" id="proyectos">
     <h1 class="titulo mb-3 sm:mb-12">proyectos</h1>
 
-    <div class="flex flex-wrap justify-center items-center sm:m-4">
+    <div class="flex flex-wrap justify-center items-center ">
       
       <TarjetaProyecto v-for="proyecto in proyectos" :key="proyecto.titulo"
         :titulo="proyecto.titulo"

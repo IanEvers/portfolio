@@ -1,31 +1,31 @@
 <template>
-  <div>
-   
-    <section class="m-4 pt-20 min-h-screen" id="sobreMi">
-      <div class="tituloYSubtitulo ">
-        <h1 class="titulo">Ian Evers</h1>
-        <p class="subtitulo">Developer</p>
-      </div>
+  
+  <section class="p-2 relative" id="sobreMi" @mousemove="this.$refs.escenaThreeJS.onDocumentMouseMove">
+    <div class="tituloYSubtitulo">
+      <h1 class="titulo">Ian Evers</h1>
+      <p class="subtitulo">Developer</p>
+    </div>
 
-      <p class="presentacion z-20"> Soy un buen pibe y me gusta hacer frontends.
-        Trabajé por dos años en el Ejército Argentino como programador web, y ahora estoy buscando otra cosa.
-        Vivo en Almagro, CABA, Argentina. <br>
-        Si les gustaría darme un laburito, pueden.
-      </p>
-   
-      <footer class="flex items-center justify-center z-20">
-        <a href="https://github.com/IanEvers?tab=repositories" class="redSocial z-20" aria-label="github"> 
-          <img src="/githubLogo.png" alt="github logo" class="redSocialImagen"> 
-        </a>
-        <a href="https://www.linkedin.com/in/ianevers/" class="redSocial z-20" aria-label="linkedin"> 
-          <img src="/linkedin.png" alt="lnkedin logo" class="redSocialImagen">
-        </a>
-        <a href="mailto:iancitoevers@gmail.com"  class="redSocial z-20" aria-label="mail">
-          <img src="/logoMail.png" alt="mail logo" class="redSocialImagen">
-        </a>
-      </footer>
-    </section>
-  </div>
+    <p class="presentacion z-20"> Soy un buen pibe y me gusta hacer frontends.
+      Trabajé por dos años en el Ejército Argentino como programador web, y ahora estoy buscando otra cosa.
+      Vivo en Almagro, CABA, Argentina. <br>
+      Si les gustaría darme un laburito, pueden.
+    </p>
+  
+    <footer class="flex items-center justify-center z-20">
+      <a href="https://github.com/IanEvers?tab=repositories" class="redSocial z-20" aria-label="github"> 
+        <img src="/githubLogo.png" alt="github logo" class="redSocialImagen"> 
+      </a>
+      <a href="https://www.linkedin.com/in/ianevers/" class="redSocial z-20" aria-label="linkedin"> 
+        <img src="/linkedin.png" alt="lnkedin logo" class="redSocialImagen">
+      </a>
+      <a href="mailto:iancitoevers@gmail.com"  class="redSocial z-20" aria-label="mail">
+        <img src="/logoMail.png" alt="mail logo" class="redSocialImagen">
+      </a>
+    </footer>
+
+    <EscenaThreeJS ref="escenaThreeJS"> </EscenaThreeJS>
+  </section>
 
 </template>
 
@@ -35,7 +35,10 @@
 
 <style lang="scss" scoped>
 
-
+#sobreMi {
+  min-height: 90vh;
+  flex: 1 1 auto;
+}
 .titulo {
   color: #524d3e;
   font-size: clamp(3rem, 10vw, 7rem);
