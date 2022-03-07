@@ -12,7 +12,7 @@
       Si les gustaría darme un laburito, pueden.
     </p>
   
-    <footer class="flex items-center justify-center z-20">
+    <footer class="flex items-center justify-evenly z-20">
       <a href="https://github.com/IanEvers?tab=repositories" class="redSocial z-20" aria-label="github"> 
         <img src="/githubLogo.png" alt="github logo" class="redSocialImagen"> 
       </a>
