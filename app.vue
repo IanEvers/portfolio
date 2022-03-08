@@ -5,7 +5,6 @@
         <img src="/logoDibujo.png" alt="" class="logo ml-2 h-14">
         <nav class="hidden sm:block">
           <div class="links flex justify-around gap-8">
-            <a class="link" href="#sobreMi"> Sobre Mi </a>
             <a class="link" href="#proyectos"> Proyectos </a>
             <a class="link" href="#contacto"> Contacto </a>
           </div>
@@ -46,6 +45,10 @@ export default {
 ::after {
   box-sizing: border-box;
 
+}
+
+html {
+  scroll-behavior:smooth
 }
 
 body {

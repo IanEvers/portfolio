@@ -3,19 +3,23 @@
     <h1 class="titulo"> Contacto</h1>
 
     <div class=" sm:flex justify-center ">
+      
+      <p v-if="this.mensajeEnviado != '' " class="hidden sm:block text-2xl w-2/3 m-auto text-center"> Responderé a la brevedad :) </p>
 
-      <p class="hidden sm:block text-2xl w-2/3 m-auto text-center">Soy tímido, escríbanme.</p>
+      <p v-else class="hidden sm:block text-2xl w-2/3 m-auto text-center">Soy tímido, escríbanme.</p>
 
       <div class="hidden sm:block hr border-2"></div>
       <form ref="form" @submit.prevent="sendEmail" class="flex flex-col justify-center w-full">
         <label class="p-1 pl-3 " for="nombre"> Nombre </label>
-        <input class="p-3 m-3" type="text" id="nombre" placeholder="Nombre">
+        <input class="p-3 m-3" type="text" id="nombre" name="from_name" placeholder="Nombre">
         <label class="p-1 pl-3 " for="mail"> E-Mail </label>
-        <input class="p-3 m-3" type="email" id="mail" placeholder="E-mail">
+        <input class="p-3 m-3" type="email" id="mail" name="reply_to" placeholder="E-mail">
         <label class="p-1 pl-3 " for="mensaje"> Mensaje </label>
-        <textarea class="p-3 m-3" name="Mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+        <textarea class="p-3 m-3" id="mensaje" name="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
 
-        <button type="button" class="boton"> Contactame </button>
+        <input type="submit" class="boton" :value="this.mensajeEnviado ?? contactame" :disabled="this.mensajeEnviado != '' " :class="{ negro: this.mensajeEnviado != ''}">
+
+        <p v-if="this.mensajeEnviado != '' " class="sm:hidden text-center p-2" > {{this.mensajeEnviado}} </p>
       </form>
     </div>
   </section>
@@ -26,14 +30,21 @@
 
   export default {
     name: 'SeccionContacto',
+     data () {
+      return {
+        mensajeEnviado: ''
+      }
+    },
 
     methods: {
       sendEmail() {
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this.$refs.form, 'YOUR_USER_ID')
+        emailjs.sendForm('service_svl0pf7', 'template_dddjaae', this.$refs.form, 'AICrE5M2IC5J3n8kv')
           .then((result) => {
-              console.log('SUCCESS!', result.text);
+            this.mensajeEnviado = 'Mensaje enviado.'
+            console.log('bien')
           }, (error) => {
-              console.log('FAILED...', error.text);
+            this.mensajeEnviado = 'Error. Mala mía.'
+            console.log('error')
           });
       }
     }
@@ -52,15 +63,34 @@
   margin: 1rem;
 }
 
+.negro {
+  background-color: #000 !important;
+}
+
 input {
   height: 52px;
   background: #fff;
   color: #000;
   font-size: 14px;
-  border-radius: 2px;
+  border-radius: 5px;
   -webkit-box-shadow: none!important;
   box-shadow: none!important;
-  border: 1px solid rgba(0,0,0,.1);
+  border: 3px solid #3f8379;
+}
+
+textarea {
+  background: #fff;
+  color: #000;
+  font-size: 14px;
+  border-radius: 5px;
+  -webkit-box-shadow: none!important;
+  box-shadow: none!important;
+  border: 3px solid #3f8379;
+}
+
+.boton:hover {
+  cursor: pointer;
+  transform: scale(1.1);  
 }
 
 .boton {
@@ -73,6 +103,16 @@ input {
   font-size: 17px;
   padding: 0.5rem 1rem;
   margin: auto;
+  transition: 0.25s;
 }
 
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 </style>

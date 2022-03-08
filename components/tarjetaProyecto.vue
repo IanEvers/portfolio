@@ -19,7 +19,7 @@
 
     <hr class="w-full border-left-2 border-black">
 
-    <p class="p-2 pt-3 descripcion z-30">{{descripcion}}</p>
+    <p class="p-4 pt-3 descripcion z-30">{{descripcion}}</p>
 
   </div>
 </template>

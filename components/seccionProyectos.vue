@@ -63,7 +63,7 @@ export default {
 
 .titulo {
   font-size: clamp(3rem, 10vw, 7rem);
-  text-transform: uppercase;
+  text-transform: capitalize;
   line-height: 1;
   color: white;
 }
