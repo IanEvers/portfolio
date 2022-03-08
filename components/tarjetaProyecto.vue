@@ -1,8 +1,10 @@
 <template>
   <div class="tarjetaProyecto text-left m-2 z-30">
     
-    <h1 class="text-2xl sm:text-3xl ml-1 p-3 z-30">{{titulo}}</h1>
+    <h1 class="text-2xl sm:text-3xl ml-1 p-3 z-30 ">{{titulo}}</h1>
 
+    <hr class="w-full border-left-2 border-black">
+    
     <div class="relative z-30">
 
       <img class="h-48 w-full object-fill z-30" :src="imagen">
@@ -14,6 +16,8 @@
         </button> 
       </a> 
     </div>
+
+    <hr class="w-full border-left-2 border-black">
 
     <p class="p-2 pt-3 descripcion z-30">{{descripcion}}</p>
 
@@ -35,23 +39,27 @@ export default {
 
 <style lang="scss" scoped>
 .tarjetaProyecto {
-  border: 3px solid #524d3e;
+  border: 2px solid #3f8379;
   max-width: min(90vw, 400px);
-  background-color: white;
-  border-radius: 10px;
+  background-color: #231a26;
+  border-radius: 7px;
+  min-height: 350px;
 }
+
 
 .botonUrl {
   position: absolute;
   bottom: 20px;
   right: 25px;
-  background-color: #726338;
+  background-color: #231a26;
   padding: 0.5rem;
   padding-bottom: 0rem;
 }
 
 .descripcion {
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   min-height: 5rem;
+  color: white;
+  font-family: inherit;
 }
 </style>

@@ -2,14 +2,14 @@
   <Renderer
     id="renderer"
     ref="renderer"
-    class="absolute top-0 right-0 max-h-full w-full opacity-40"
+    class="absolute top-0 right-0 max-h-full w-full opacity-80"
     :alpha="true"
     @mousemove="onDocumentMouseMove"
   >
     <Camera  ref="camera" :position="{ z: 2, x: -0.8 }"/>
     <Scene>
-      <PointLight :position="{ y: 50, z: 50 }" />
-      <AmbientLight />
+      <PointLight color="#9A7AA1" :position="{ y: 50, z: 50 }" />
+      <AmbientLight color="#9A7AA1" />
       
       <GltfModel
         src="/modelo/ianevers.glb"
@@ -32,6 +32,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger.js";
     
 
 export default {
+  name: 'EscenaThreeJS',
   components: { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel},
   mounted() {
     this.tamañoCanvas()
@@ -54,10 +55,6 @@ export default {
 
       this.$refs.renderer.onBeforeRender(() => {
 
-        // console.log(" - this.mouseY " + (- this.mouseY) )
-        // console.log("- target.y  "+  (- target.y) )
-        // console.log(" - this.mouseY - target.y + 100 "+  (- this.mouseY - target.y + 100 ))
-
         target.y += ( - this.mouseY + 100) * 0.0002 ;
         target.y = Math.min(Math.max(target.y, -1.5), 0);
 
@@ -74,23 +71,23 @@ export default {
       });
     } else {
 
-      this.$refs.camera.camera.position.y = 1
+      this.$refs.camera.camera.position.y = 0.5
       this.$refs.camera.camera.position.z = 5
-      this.$refs.camera.camera.position.x = 0.2
+      this.$refs.camera.camera.position.x = 0.5
 
       this.$refs.camera.camera.rotation.y = 0.1
    
       let tiempoInicial = Date.now();
       
       this.$refs.renderer.onBeforeRender(() => {
-        if(this.modelo != '') {
-          this.modelo.rotation.y = 0;
-          this.modelo.rotation.z = 2;
-          this.modelo.rotation.x = 5;
-        }
+
         const tiempo = Date.now() - tiempoInicial;
         if(this.modelo != '') {
+          this.modelo.rotation.y = 0;
+          this.modelo.rotation.z = 0;
+          this.modelo.rotation.x = -0.2;
           this.modelo.position.y = Math.cos(tiempo / 500) * 0.05 - 1
+          this.modelo.rotation.y = Math.cos(tiempo / 400) * 0.1 + 0.3
         }
       })
     }

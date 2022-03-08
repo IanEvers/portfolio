@@ -1,9 +1,9 @@
 <template>
   
-  <section class="p-2 relative" id="sobreMi" @mousemove="this.$refs.escenaThreeJS.onDocumentMouseMove">
+  <section class="p-4 relative" id="sobreMi" @mousemove="this.$refs.escenaThreeJS.onDocumentMouseMove">
     <div class="tituloYSubtitulo">
       <h1 class="titulo">Ian Evers</h1>
-      <p class="subtitulo">Developer</p>
+      <p class="subtitulo"> <code> Developer </code> </p>
     </div>
 
     <p class="presentacion z-20"> Soy un buen pibe y me gusta hacer frontends.
@@ -30,7 +30,6 @@
 </template>
 
 <script>
-
 </script>
 
 <style lang="scss" scoped>
@@ -40,7 +39,7 @@
   flex: 1 1 auto;
 }
 .titulo {
-  color: #524d3e;
+  color: #54d1be;
   font-size: clamp(3rem, 10vw, 7rem);
   text-transform: uppercase;
   line-height: 1;
@@ -48,13 +47,14 @@
 
 .subtitulo {
   font-size: 2rem;
-  color: #726338;
+  color: #3f8379;
 }
 
 .presentacion {
   margin: 0.5rem 0;
   max-width: 700px;
   font-size: 1.05rem;
+  color: #e3fffb;
 }
 
 .boton {

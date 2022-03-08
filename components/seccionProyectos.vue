@@ -1,8 +1,8 @@
 <template>
-  <section class="min-h-screen pt-5 text-center seccionProyectos z-30" id="proyectos">
-    <h1 class="titulo mb-3 sm:mb-12">proyectos</h1>
+  <section class="min-h-screen pt-10 pb-10 text-center seccionProyectos z-30" id="proyectos">
+    <h1 class="titulo mb-5 sm:mb-12">proyectos</h1>
 
-    <div class="flex flex-wrap justify-center items-center ">
+    <div class="flex flex-wrap justify-center items-center">
       
       <TarjetaProyecto v-for="proyecto in proyectos" :key="proyecto.titulo"
         :titulo="proyecto.titulo"
@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  name: 'SeccionProyectos',
   data: function () {
     return {
       proyectos: 
@@ -30,7 +31,7 @@ export default {
 
         {
           titulo: "Piano-midi",
-          descripcion: "una mini webapp para poder hacer dibujos con el piano. Actualmente en desarrollo.",
+          descripcion: "Una mini webapp para poder hacer dibujos con el piano. Actualmente en desarrollo.",
           imagen: "/piano-midi.jpg",
           url: "https://piano-midi-ianevers.vercel.app/"
         },
@@ -44,7 +45,7 @@ export default {
 
         {
           titulo: "Bot de tuiter",
-          descripcion: "Un bot que genera noticias falsas y las sube a tuiter, escrito en python.",
+          descripcion: "Un bot que genera noticias falsas y las sube a tuiter, escrito en python. No había foto jajaj.",
           imagen: "/podesta.jpg",
           url: "https://github.com/IanEvers/twitterBot"
         },
@@ -57,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 .seccionProyectos {
-  background-color: #726338;
+  background-color: #3f8379;
 }
 
 .titulo {
