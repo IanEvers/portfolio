@@ -35,13 +35,7 @@ export default {
   mounted() {
     gsap.registerPlugin(ScrollTrigger);
  
-    gsap.from('.tarjetaProyecto', { 
-      x: 100,
-      opacity: 0.5,
-      scrollTrigger: {
-        trigger: '.seccionProyectos', 
-      }
-    })
+  
     
   },
 }
