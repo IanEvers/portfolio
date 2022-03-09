@@ -2,23 +2,48 @@
   <div>
     <div class="flex flex-col min-h-screen">
       <header class="w-screen flex items-center justify-between sm:justify-around z-30">
+
         <img src="/logoDibujo.png" alt="" class="logo ml-2 h-14">
         <nav class="hidden sm:block">
-          <div class="links flex justify-around gap-8">
+          <div class="flex justify-around gap-8">
             <a class="link" href="#proyectos"> Proyectos </a>
-            <a class="link" href="#contacto"> Contacto </a>
+            <a class="link" href="#contacto">  Contacto  </a>
           </div>
         </nav>
 
-        <button class="sm:hidden p-6">
+        <button class="sm:hidden mr-6" @click="mostrarSidebar = !mostrarSidebar">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </header>
+
+      <Transition name="slide">
+        <div v-if="mostrarSidebar" class="sidebar fixed h-screen w-screen z-40">
+          
+          <div class="flex justify-end m-6">
+
+            <button class="h-16 w-16  flex  items-center" @click="mostrarSidebar = !mostrarSidebar">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          <nav class="h-screen flex justify-center text-center" >
+            <div class="flex flex-col p-48 gap-8" >
+              <a class="text-4xl" href="#proyectos" @click="mostrarSidebar = !mostrarSidebar"> Proyectos </a>
+              <a class="text-4xl" href="#contacto"  @click="mostrarSidebar = !mostrarSidebar"> Contacto </a>
+            </div>
+          </nav>
+        </div>
+      </Transition>
+
       
       <SeccionSobreMi> </SeccionSobreMi>
     </div>
+
+    
 
     <SeccionProyectos> </SeccionProyectos>
     <SeccionContacto> </SeccionContacto>
@@ -28,16 +53,21 @@
 
 <script>
 
-import gsap from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger.js";
+// import gsap from 'gsap'
+// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 export default {
   mounted() {
-    gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollTrigger);
  
-  
-    
   },
+
+  data () {
+    return {
+      mostrarSidebar: false
+    }
+  },
+  
 }
 </script>
 
@@ -70,6 +100,24 @@ header {
   background-color: #0b071d;
   border-bottom: #000000 solid 2px;
 }
+
+.sidebar {
+  background-color: #231a26;
+  transition: 1s;
+}
+
+.slide-enter-active,
+.slide-leave-active
+{
+  transition: transform 0.2s ease;
+}
+
+.slide-enter,
+.slide-leave-to {
+  transform: translateX(100%);
+  transition: all 150ms ease-in 0s
+}
+
 .link {
   font-size: 1.2rem;
   line-height: 1;
