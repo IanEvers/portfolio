@@ -48,7 +48,7 @@ export default {
 }
 
 .imagenLink {
-  transition: 1s;
+  transition: 0.25s;
 }
 
 .imagenLink:hover {
