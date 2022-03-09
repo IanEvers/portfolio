@@ -5,7 +5,7 @@
 
     <hr class="w-full border-left-2 border-black">
     
-    <div class="relative z-30">
+    <div class="relative z-30 imagenLink">
       <a :href="url" target="_blank" class=" ">
         <img class="h-48 w-full object-fill z-30" :src="imagen">
       </a>
@@ -47,6 +47,14 @@ export default {
   min-height: 350px;
 }
 
+.imagenLink {
+  transition: 1s;
+}
+
+.imagenLink:hover {
+  background-color: #231a267c;
+  transform: scale(1.05);
+}
 
 .botonUrl {
   position: absolute;
