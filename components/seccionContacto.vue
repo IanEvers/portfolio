@@ -11,15 +11,14 @@
       <div class="hidden sm:block hr border-2"></div>
       <form ref="form" @submit.prevent="sendEmail" class="flex flex-col justify-center w-full">
         <label class="p-1 pl-3 " for="nombre"> Nombre </label>
-        <input class="p-3 m-3" type="text" id="nombre" name="from_name" placeholder="Nombre">
+        <input class="p-3 m-3" type="text" id="nombre" required name="from_name" placeholder="Nombre">
         <label class="p-1 pl-3 " for="mail"> E-Mail </label>
-        <input class="p-3 m-3" type="email" id="mail" name="reply_to" placeholder="E-mail">
+        <input class="p-3 m-3" type="email" id="mail" required name="reply_to" placeholder="E-mail">
         <label class="p-1 pl-3 " for="mensaje"> Mensaje </label>
-        <textarea class="p-3 m-3" id="mensaje" name="message" cols="30" rows="10" placeholder="Mensaje"></textarea>
+        <textarea class="p-3 m-3" id="mensaje" name="message" required cols="30" rows="10" placeholder="Mensaje"></textarea>
 
         <input type="submit" class="boton" :value="this.mensajeEnviado ?? contactame" :disabled="this.mensajeEnviado != '' " :class="{ negro: this.mensajeEnviado != ''}">
 
-        <p v-if="this.mensajeEnviado != '' " class="sm:hidden text-center p-2" > {{this.mensajeEnviado}} </p>
       </form>
     </div>
   </section>
@@ -43,7 +42,7 @@
           emailjs.sendForm('service_svl0pf7', 'template_dddjaae', this.$refs.form, 'AICrE5M2IC5J3n8kv')
           .then((result) => {
             this.mensajeEnviado = 'Mensaje enviado.'
-            console.log('bien')
+            console.log(result)
           }, (error) => {
             this.mensajeEnviado = 'Error. Mala mía.'
             console.log('error')
