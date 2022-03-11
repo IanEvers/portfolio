@@ -38,7 +38,9 @@
 
     methods: {
       sendEmail() {
-        emailjs.sendForm('service_svl0pf7', 'template_dddjaae', this.$refs.form, 'AICrE5M2IC5J3n8kv')
+        if(this.mensajeEnviado == '') {
+          this.mensajeEnviado = 'Enviando...'
+          emailjs.sendForm('service_svl0pf7', 'template_dddjaae', this.$refs.form, 'AICrE5M2IC5J3n8kv')
           .then((result) => {
             this.mensajeEnviado = 'Mensaje enviado.'
             console.log('bien')
@@ -46,6 +48,7 @@
             this.mensajeEnviado = 'Error. Mala mía.'
             console.log('error')
           });
+        }
       }
     }
   }

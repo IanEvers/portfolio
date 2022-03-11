@@ -32,8 +32,8 @@
 
           <nav class="h-screen flex justify-center text-center" >
             <div class="flex flex-col p-48 gap-8" >
-              <a class="text-4xl" href="#proyectos" @click="mostrarSidebar = !mostrarSidebar"> Proyectos </a>
-              <a class="text-4xl" href="#contacto"  @click="mostrarSidebar = !mostrarSidebar"> Contacto </a>
+              <a class="text-4xl linkSidebar" href="#proyectos" @click="mostrarSidebar = !mostrarSidebar"> Proyectos </a>
+              <a class="text-4xl linkSidebar" href="#contacto"  @click="mostrarSidebar = !mostrarSidebar"> Contacto </a>
             </div>
           </nav>
         </div>
@@ -77,7 +77,6 @@ export default {
 *::before,
 ::after {
   box-sizing: border-box;
-
 }
 
 html {
@@ -88,7 +87,6 @@ body {
   background-color: #231a26;
   color: rgb(255, 250, 250);
   line-height: 1.5;
-  font-family: sans-serif;
   overflow-x: hidden;
 }
 
@@ -103,13 +101,10 @@ header {
 
 .sidebar {
   background-color: #231a26;
-  transition: 1s;
 }
 
-.slide-enter-active,
-.slide-leave-active
-{
-  transition: transform 0.2s ease;
+.linkSidebar {
+  border-bottom: #3f8379 1px solid;
 }
 
 .slide-enter,

@@ -48,6 +48,7 @@
 .subtitulo {
   font-size: 2rem;
   color: #3f8379;
+  padding-left: 0.5rem;
 }
 
 .presentacion {
