@@ -146,7 +146,7 @@ header {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c2a2a;
+  background: #ffffff;
 }
 </style>
 
