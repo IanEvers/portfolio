@@ -1,5 +1,12 @@
 <template>
   <div>
+    <Html>
+      <Head>
+        <Title>Ian Evers - Portfolio </Title>
+        <Meta name="description" content="Mi portfolio!" />
+      </Head>
+    </Html>
+
     <div class="flex flex-col min-h-screen">
       <header class="w-screen flex items-center justify-between sm:justify-around z-30">
 
@@ -57,11 +64,6 @@
 // import { ScrollTrigger } from "gsap/ScrollTrigger.js";
 
 export default {
-  mounted() {
-    // gsap.registerPlugin(ScrollTrigger);
- 
-  },
-
   data () {
     return {
       mostrarSidebar: false
