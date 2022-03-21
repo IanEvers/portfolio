@@ -100,6 +100,10 @@ body {
   overflow-x: hidden;
 }
 
+p {
+  font-weight: 200;
+}
+
 section {
   scroll-behavior: smooth;
 }
