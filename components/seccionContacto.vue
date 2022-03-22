@@ -78,6 +78,7 @@ input {
   -webkit-box-shadow: none!important;
   box-shadow: none!important;
   border: 3px solid #3f8379;
+  font-weight: 600;
 }
 
 textarea {
@@ -88,6 +89,7 @@ textarea {
   -webkit-box-shadow: none!important;
   box-shadow: none!important;
   border: 3px solid #3f8379;
+  font-weight: 600;
 }
 
 .boton:hover {
