@@ -10,7 +10,7 @@
     <div class="flex flex-col min-h-screen">
       <header class="w-screen flex items-center justify-between sm:justify-around z-30">
 
-        <img src="/logoDibujo.png" alt="" class="logo ml-2 h-14">
+        <img src="/logo.png" alt="" class="logo mt-2 ml-5 h-10 ">
         <nav class="hidden sm:block">
           <div class="flex justify-around gap-8">
             <a class="link" href="#proyectos"> Proyectos </a>
@@ -60,17 +60,14 @@
 
 <script>
 
-// import gsap from 'gsap'
-// import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-
 export default {
   data () {
     return {
       mostrarSidebar: false
     }
   },
-  
 }
+  
 </script>
 
 <style>
