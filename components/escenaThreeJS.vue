@@ -26,10 +26,6 @@
 <script>
 
 import { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel } from 'troisjs'
-import gsap from 'gsap'
-import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-
-    
 
 export default {
   name: 'EscenaThreeJS',
