@@ -32,20 +32,7 @@ export default {
   components: { Box, Camera, LambertMaterial, PointLight, AmbientLight, Renderer, Scene, GltfModel},
   mounted() {
     this.tamañoCanvas()
-    
-    gsap.registerPlugin(ScrollTrigger)
-
-    // gsap.to('#renderer' , {
-    //   scrollTrigger: {
-    //     trigger: '.seccionProyectos',
-    //     start: "top bottom",
-    //     toggleActions: 'restart none reverse reverse'
-    //   },
-    //   opacity: 0,
-    //   duration: 1
-    // })
-    
-
+  
     let target = this.$refs.renderer.three.pointer.positionV3
     if (window.innerWidth > 768) {
 
