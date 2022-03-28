@@ -39,7 +39,7 @@ export default {
         {
           titulo: "Portfolio",
           descripcion: "Esta página XD. La hice para aprender a hacer una página con Three JS. El modelo de mi cara lo hice con un plugin de Blender, no sé modelar.",
-          imagen: "/portfolio.jpg",
+          imagen: "/portfolio.png",
           url: "https://ian-broker.vercel.app/"
         },
 

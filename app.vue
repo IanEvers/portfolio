@@ -4,6 +4,21 @@
       <Head>
         <Title>Ian Evers - Portfolio </Title>
         <Meta name="description" content="Mi portfolio!" />
+        <Meta name="description" content="Portfolio de Ian Evers." />
+        
+        <!-- Open Graph / Facebook -->
+        <Meta property="og:type" content="website"/>
+        <Meta property="og:title" content="Ian Evers - Portfolio"/>
+        <Meta property="og:description" content="Portfolio de Ian Evers."/>
+        <Meta property="og:image" content="https://ian-broker.vercel.app/portfolio.png"/>
+        <Meta property="og:url" content="https://sofia-merlino.vercel.app"/>
+
+
+        <Meta  property="twitter:card" content="Porftolio de Ian Evers"/>
+        <Meta  property="twitter:url" content="https://ian-broker.vercel.app/"/>
+        <Meta  property="twitter:title" content="Ian Evers - Portfolio"/>
+        <Meta  property="twitter:description" content="Portfolio de Ian Evers."/>
+        <Meta  property="twitter:image" content="https://ian-broker.vercel.app/portfolio.png"/>
       </Head>
     </Html>
 
