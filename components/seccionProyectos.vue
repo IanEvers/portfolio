@@ -9,6 +9,7 @@
         :descripcion="proyecto.descripcion"
         :imagen="proyecto.imagen"
         :url="proyecto.url"
+        :enDesarrollo="proyecto.enDesarrollo"
       />
 
     </div>
@@ -25,21 +26,22 @@ export default {
         {
           titulo: "Arriba El Taller",
           descripcion: "Una pequeña página web que hice para Lea, profesora de un taller de arte para niños.",
-          imagen: "/MapaLea.png",
+          imagen: "/MapaLea.webp",
           url: "https://www.arribaeltaller.com.ar/"
         },
 
         {
           titulo: "Piano-midi",
-          descripcion: "Una mini webapp para poder hacer dibujos con el piano. Actualmente en desarrollo.",
-          imagen: "/piano-midi.jpg",
-          url: "https://piano-midi-ianevers.vercel.app/"
+          descripcion: "Una mini webapp para poder hacer dibujos con el piano.",
+          imagen: "/piano-midi.webp",
+          url: "https://piano-midi-ianevers.vercel.app/",
+          enDesarrollo: true
         },
 
         {
           titulo: "Portfolio",
           descripcion: "Esta página XD. La hice para aprender a hacer una página con Three JS. El modelo de mi cara lo hice con un plugin de Blender, no sé modelar.",
-          imagen: "/portfolio.png",
+          imagen: "/portfolio.webp",
           url: "https://ian-broker.vercel.app/"
         },
 
@@ -48,6 +50,21 @@ export default {
           descripcion: "Un bot que genera noticias falsas y las sube a tuiter, escrito en python. No había foto jajaj.",
           imagen: "/podesta.jpg",
           url: "https://github.com/IanEvers/twitterBot"
+        },
+
+        {
+          titulo: "Portfolio de Cata Rohde",
+          descripcion: "Una página web para mostrar trabajos cinematográficos de catalina Rohde.",
+          imagen: "/cataRohde.webp",
+          url: "https://cata-rohde.vercel.app/"
+        },
+        
+        {
+          titulo: "Portfolio de Sofía Merlino",
+          descripcion: "Una página web para mostrar trabajos de diseño de Sofía Merlino.",
+          imagen: "/sofia.webp",
+          url: "https://sofia-merlino.vercel.app/",
+          enDesarrollo: true
         },
 
       ]

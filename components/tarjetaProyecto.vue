@@ -1,7 +1,7 @@
 <template>
   <div class="tarjetaProyecto text-left m-2 z-30">
     
-    <h1 class="text-2xl sm:text-3xl ml-1 p-3 z-30 ">{{titulo}}</h1>
+    <h1 class="text-2xl ml-1 p-3 z-30 ">{{titulo}}</h1>
 
     <hr class="w-full border-left-2 border-black">
     
@@ -22,6 +22,8 @@
 
     <p class="p-4 pt-3 descripcion z-30">{{descripcion}}</p>
 
+    <p class="enDesarrollo ml-4 m-4 mt-0 pl-2 pr-2" v-if="enDesarrollo"> desarrollo en curso </p>
+
   </div>
 </template>
 
@@ -34,6 +36,7 @@ export default {
     descripcion: String,
     imagen: String,
     url: String,
+    enDesarrollo: Boolean
   }
 }
 </script>
@@ -69,5 +72,11 @@ export default {
   min-height: 5rem;
   color: white;
   font-family: inherit;
+}
+
+.enDesarrollo {
+  font-weight: bold;
+  background-color: #3f8379;
+  width: fit-content;
 }
 </style>
