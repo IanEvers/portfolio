@@ -38,17 +38,18 @@
   min-height: 90vh;
   flex: 1 1 auto;
 }
+
 .titulo {
   color: #54d1be;
   font-size: clamp(3rem, 10vw, 7rem);
   text-transform: uppercase;
   line-height: 1;
+  margin-left: -5px;
 }
 
 .subtitulo {
   font-size: 2rem;
   color: #3f8379;
-  padding-left: 0.5rem;
 }
 
 .presentacion {
@@ -77,7 +78,7 @@
     display: grid;
     grid-template-columns: 
       minmax(1rem, 1fr)
-      repeat(3, minmax(10rem, 30rem))
+      repeat(3, minmax(10rem, 50rem))
       minmax(1rem, 1fr);
     gap: 0.5rem;
     grid-auto-flow: dense;
@@ -86,6 +87,10 @@
   .tituloYSubtitulo {
     grid-column: 2 / 4;
     grid-row: 1;
+  }
+
+  .titulo {
+    margin-left: -10px;
   }
 
   footer {

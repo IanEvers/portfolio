@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/styles.scss'],
   buildModules: ['@nuxtjs/tailwindcss'],
   ssr: false,
+  target: 'static',
   meta: {
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -14,7 +15,7 @@ export default defineNuxtConfig({
       { property: "og:title", content: "Ian Evers - Portfolio"  },
       { property: "og:description", content: "Portfolio de Ian Evers." },
       { property: "og:image", content: "https://ian-broker.vercel.app/portfolio.png" },
-      { property: "og:url", content: "https://sofia-merlino.vercel.app" },
+      { property: "og:url", content: "https://ian-broker.vercel.app" },
       { property: "twitter:card", content: "Porftolio de Ian Evers"},
       { property: "twitter:url", content: "https://ian-broker.vercel.app/" },
       { property: "twitter:title", content: "Ian Evers - Portfolio" },

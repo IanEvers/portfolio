@@ -58,6 +58,7 @@
 .titulo {
   font-size: clamp(3rem, 10vw, 7rem);
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .hr {
