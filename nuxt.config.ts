@@ -5,7 +5,6 @@ export default defineNuxtConfig({
   css: ['~/assets/scss/styles.scss'],
   buildModules: ['@nuxtjs/tailwindcss'],
   ssr: false,
-  target: 'static',
   meta: {
     meta: [
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
