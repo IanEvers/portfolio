@@ -6,10 +6,7 @@
       <p class="subtitulo"> <code> Developer </code> </p>
     </div>
 
-    <p class="presentacion z-20"> Soy un buen pibe y me gusta hacer frontends.
-      Trabajé por dos años en el Ejército Argentino como programador web, y ahora estoy buscando otra cosa.
-      Vivo en Almagro, CABA, Argentina. <br>
-      Si les gustaría darme un laburito, pueden.
+    <p class="presentacion z-20"> Programador Web. Estudiando Ingeniería en Sistemas en la UTN.
     </p>
   
     <footer class="flex items-center justify-evenly z-20">
