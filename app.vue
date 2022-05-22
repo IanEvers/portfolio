@@ -43,16 +43,16 @@
       <Transition name="slide">
         <div v-if="mostrarSidebar" class="sidebar fixed h-screen w-screen z-40">
           
-          <div class="flex justify-end m-6">
+          <div class="flex justify-end m-3">
 
-            <button class="h-16 w-16  flex  items-center" @click="mostrarSidebar = !mostrarSidebar">
+            <button class="h-10 w-10  flex  items-center" @click="mostrarSidebar = !mostrarSidebar">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
-          <nav class="h-screen flex justify-center text-center" >
+          <nav class="h-screen flex justify-center text-center">
             <div class="flex flex-col p-48 gap-8" >
               <a class="text-4xl linkSidebar" href="#proyectos" @click="mostrarSidebar = !mostrarSidebar"> Proyectos </a>
               <a class="text-4xl linkSidebar" href="#contacto"  @click="mostrarSidebar = !mostrarSidebar"> Contacto </a>
@@ -65,8 +65,6 @@
       <SeccionSobreMi> </SeccionSobreMi>
     </div>
 
-    
-
     <SeccionProyectos> </SeccionProyectos>
     <SeccionContacto> </SeccionContacto>
     
@@ -74,6 +72,10 @@
 </template>
 
 <script>
+
+import { gsap } from "gsap";
+
+
 
 export default {
   data () {
@@ -133,10 +135,16 @@ header {
   border-bottom: #3f8379 1px solid;
 }
 
-.slide-enter,
+
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.slide-enter-from,
 .slide-leave-to {
-  transform: translateX(100%);
-  transition: all 150ms ease-in 0s
+  opacity: 0;
 }
 
 .link {
