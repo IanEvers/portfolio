@@ -7,7 +7,6 @@
     </div>
 
     <p class="presentacion z-20"> Programador Web con dos años de experiencia como desarrollador en el Ejército argentino. Estudiando Ingeniería en Sistemas en la UTN.
-      Ansioso por trabajar en Estudio NK.
     </p>
   
     <footer class="flex items-center justify-evenly z-20">
