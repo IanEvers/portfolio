@@ -64,7 +64,6 @@ export default {
           descripcion: "Una página web para mostrar trabajos de diseño de Sofía Merlino.",
           imagen: "/sofia.webp",
           url: "https://sofia-merlino.vercel.app/",
-          enDesarrollo: true
         },
 
       ]
