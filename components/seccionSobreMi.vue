@@ -6,7 +6,7 @@
       <p class="subtitulo"> <code> Developer </code> </p>
     </div>
 
-    <p class="presentacion z-20"> Programador Web con dos años de experiencia como desarrollador en el Ejército argentino. Estudiando Ingeniería en Sistemas en la UTN.
+    <p class="presentacion z-20"> Programador Web desde 2019.
     </p>
   
     <footer class="flex items-center justify-evenly z-20">
