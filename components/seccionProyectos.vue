@@ -24,6 +24,13 @@ export default {
       proyectos: 
       [ 
         {
+          titulo: "Campus Homeopático",
+          descripcion: "Un pequeño campus donde los socios de la Escuela Homeopática Tomás Paschero pueden ver sus clases. Hecho con nuxjs, vuejs y Strapi.",
+          imagen: "/campusPaschero.webp",
+          url: "https://campus.escuelapaschero.org.ar/"
+        },
+
+        {
           titulo: "Arriba El Taller",
           descripcion: "Una pequeña página web que hice para Lea, profesora de un taller de arte para niños.",
           imagen: "/MapaLea.webp",

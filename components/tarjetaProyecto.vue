@@ -7,7 +7,7 @@
     
     <div class="relative z-30 imagenLink">
       <a :href="url" target="_blank" class=" ">
-        <img class="h-48 w-full object-fill z-30" :src="imagen">
+        <img class="h-48 w-full object-cover z-30" :src="imagen">
       </a>
       <a :href="url" target="_blank" class=" z-30">
         <button class="z-30 botonUrl">
