@@ -25,7 +25,7 @@ export default {
       [ 
         {
           titulo: "Campus Homeopático",
-          descripcion: "Un pequeño campus donde los socios de la Escuela Homeopática Tomás Paschero pueden ver sus clases. Hecho con nuxjs, vuejs y Strapi.",
+          descripcion: "Un pequeño campus donde los socios de la Escuela Homeopática Tomás Paschero pueden ver sus clases. Hecho con Nuxtjs, Vuejs y Strapi.",
           imagen: "/campusPaschero.webp",
           url: "https://campus.escuelapaschero.org.ar/"
         },
