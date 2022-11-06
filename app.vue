@@ -71,15 +71,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { inject } from '@vercel/analytics';
 
-export default {
-  data () {
-    return {
-      mostrarSidebar: false
-    }
-  },
-}
+// Make sure to call this only once in your app
+inject();
+
+const mostrarSidebar = ref(false)
+
   
 </script>
 
