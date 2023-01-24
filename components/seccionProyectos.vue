@@ -73,6 +73,13 @@ export default {
           url: "https://sofia-merlino.vercel.app/",
         },
 
+        {
+          titulo: "Argentina al revés",
+          descripcion: "Un jueguito web de adivinar las provincias argentinas.",
+          imagen: "/Flag_of_Argentina.svg.webp",
+          url: "https://arg-al-reves.vercel.app/",
+        },
+
       ]
     }
   },
