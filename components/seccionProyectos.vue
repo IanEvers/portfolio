@@ -52,12 +52,7 @@ export default {
           url: "https://ian-broker.vercel.app/"
         },
 
-        {
-          titulo: "Bot de tuiter",
-          descripcion: "Un bot que genera noticias falsas y las sube a tuiter, escrito en python. No había foto jajaj.",
-          imagen: "/podesta.jpg",
-          url: "https://github.com/IanEvers/twitterBot"
-        },
+    
 
         {
           titulo: "Portfolio de Cata Rohde",
