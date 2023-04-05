@@ -75,6 +75,13 @@ export default {
           url: "https://arg-al-reves.vercel.app/",
         },
 
+        {
+          titulo: "Foto de fotos",
+          descripcion: "Una herramienta para hacer imagenes hechas de otras imagenes, escrito en Rust.",
+          imagen: "/imagen_rust.webp",
+          url: "https://github.com/IanEvers/foto-de-fotos",
+        },
+
       ]
     }
   },
