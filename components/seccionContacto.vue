@@ -44,7 +44,7 @@
             this.mensajeEnviado = 'Mensaje enviado.'
             console.log(result)
           }, (error) => {
-            this.mensajeEnviado = 'Error. Mala mía.'
+            this.mensajeEnviado = 'Error. Mala mía. Si todavia querés mandarme un mail, es iancitoevers@gmail.com '
             console.log('error')
           });
         }
