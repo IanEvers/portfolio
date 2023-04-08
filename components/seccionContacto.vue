@@ -4,7 +4,9 @@
 
     <div class=" sm:flex justify-center ">
       
-      <p v-if="this.mensajeEnviado != '' " class="hidden sm:block text-2xl w-2/3 m-auto text-center"> Responderé a la brevedad :) </p>
+      <p v-if="this.mensajeEnviado != '' && this.mensajeEnviado != 'Error. Mala mía.' " class="hidden sm:block text-2xl w-2/3 m-auto text-center"> Responderé a la brevedad :) </p>
+      
+      <p v-if="this.mensajeEnviado != '' && this.mensajeEnviado == 'Error. Mala mía.' " class="hidden sm:block text-2xl w-2/3 m-auto text-center"> Error. Mala mía. Si todavia querés mandarme un mail, es <a href="mailto:iancitoevers@gmail.com"> iancitoevers@gmail.com </a> </p>
 
       <p v-else class="hidden sm:block text-2xl w-2/3 m-auto text-center">Soy tímido, escríbanme.</p>
 
@@ -44,7 +46,7 @@
             this.mensajeEnviado = 'Mensaje enviado.'
             console.log(result)
           }, (error) => {
-            this.mensajeEnviado = 'Error. Mala mía. Si todavia querés mandarme un mail, es iancitoevers@gmail.com '
+            this.mensajeEnviado = 'Error. Mala mía.'
             console.log('error')
           });
         }
