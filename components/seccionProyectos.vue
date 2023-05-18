@@ -82,6 +82,13 @@ export default {
           url: "https://github.com/IanEvers/foto-de-fotos",
         },
 
+        {
+          titulo: "Overtime Basquet",
+          descripcion: "Una página para un torneo de basquet amateur. Realizada en mi trabajo para dualfyre.com.",
+          imagen: "/overtime.webp",
+          url: "https://overtimebasquet.com",
+        },
+
       ]
     }
   },
