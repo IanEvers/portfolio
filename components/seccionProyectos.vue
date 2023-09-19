@@ -76,6 +76,13 @@ export default {
         },
 
         {
+          titulo: "Prode - Elecciones 2023",
+          descripcion: "Una pequeña Web App para que la gente suba sus predicciones para las elecciones 2023",
+          imagen: "/prode.png",
+          url: "https://prode-elecciones.vercel.app/",
+        },
+
+        {
           titulo: "Foto de fotos",
           descripcion: "Una herramienta para hacer imagenes hechas de otras imagenes, escrito en Rust.",
           imagen: "/imagen_rust.webp",
