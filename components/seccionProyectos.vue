@@ -51,15 +51,6 @@ export default {
           imagen: "/portfolio.webp",
           url: "https://ian-broker.vercel.app/"
         },
-
-    
-
-        {
-          titulo: "Portfolio de Cata Rohde",
-          descripcion: "Una página web para mostrar trabajos cinematográficos de catalina Rohde.",
-          imagen: "/cataRohde.webp",
-          url: "https://cata-rohde.vercel.app/"
-        },
         
         {
           titulo: "Portfolio de Sofía Merlino",
@@ -96,6 +87,12 @@ export default {
           url: "https://overtimebasquet.com",
         },
 
+        {
+          titulo: "The brand side",
+          descripcion: "Una página web para una agencia de diseño zarpada.",
+          imagen: "/brandSide.png", 
+          url: "https://brandside.studio/",
+        }
       ]
     }
   },
