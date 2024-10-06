@@ -90,7 +90,7 @@ export default {
         {
           titulo: "The brand side",
           descripcion: "Una página web para una agencia de diseño zarpada.",
-          imagen: "/brandSide.png", 
+          imagen: "/brand-side.png", 
           url: "https://brandside.studio/",
         }
       ]
